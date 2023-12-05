@@ -11,6 +11,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 
+from selenium import webdriver
+
 
 class InstagramBot:
     def __init__(self):
@@ -19,7 +21,8 @@ class InstagramBot:
         # chrome_options.add_argument("--start-maximized")  # Maximize the Chrome window
         # Use webdriver_manager to automatically download and manage the ChromeDriver
         # add undetected_chromedriver here 
-        self.driver = uc.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        #self.driver = uc.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        self.driver = webdriver.Edge()
 
     def login(self, email, password):
         # Open Instagram
